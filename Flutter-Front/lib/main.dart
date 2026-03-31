@@ -14,12 +14,6 @@ import 'controller/pd_data/food_controller.dart';
 import 'screen/sample_my_app1.dart' as sampleApp;
 
 void main() {
-  // runApp( MySplash() ); // runApp
-  // runApp( MyLoginScreen() ); // runApp
-  // runApp( MyMainScreen() ); // runApp
-  // runApp( MyAppRouting() ); // runApp
-  // runApp( MyApp() ); // runApp
-  // runApp( MySplash2() ); // runApp
   runApp(
       MultiProvider( // 다중 프로바이더를 사용하겠다.
         providers: [
