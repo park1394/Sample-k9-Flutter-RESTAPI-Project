@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cd \\\"e:/0-sample-flutter-projectt-k9\\\" && git stash pop 2>&1\",\"description\":\"Restore stashed changes\"}",
+  "error": "Exit code 1\nerror: Your local changes to the following files would be overwritten by merge:\n\tSpring-Back/SpringBasic/api5012/bin/main/com/busanit501/api5012/controller/MemberController.class\n\tSpring-Back/SpringBasic/api5012/bin/main/com/busanit501/api5012/security/APIUserDetailsService.class\nPlease commit your changes or stash them before you merge.\nAborting\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges not staged for commit:\n  (use \"git add <file>...\" to update what will...",
+  "timestamp": "2026-04-10T04:11:47.464Z",
+  "retry_count": 2
+}

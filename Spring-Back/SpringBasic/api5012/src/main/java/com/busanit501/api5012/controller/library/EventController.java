@@ -70,7 +70,7 @@ public class EventController {
             @RequestParam(defaultValue = "10") int size) {
         log.info("행사 목록 조회 요청 - page: {}, size: {}", page, size);
 
-        Pageable pageable = PageRequest.of(page, size, Sort.by("startDate").descending());
+        Pageable pageable = PageRequest.of(page, size, Sort.by("eventDate").descending());
         Page<LibraryEventDTO> eventPage = eventService.getEvents(pageable);
         return ResponseEntity.ok(eventPage);
     }

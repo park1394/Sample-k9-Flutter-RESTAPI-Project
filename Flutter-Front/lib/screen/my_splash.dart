@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MySplash2 extends StatefulWidget {
-  const MySplash2({super.key});
+class MySplash extends StatefulWidget {
+  const MySplash({super.key});
 
   @override
-  State<MySplash2> createState() => _MySplash2State();
+  State<MySplash> createState() => _MySplash2State();
 }
 
-class _MySplash2State extends State<MySplash2> {
+class _MySplash2State extends State<MySplash> {
 
   // 스플래쉬 기능을 하기 위해서, 스테이트풀의 생명주기를 이용해서,
   // 초기 세팅작업에서, 3초 뒤에, 메인화면으로 이동하는 코드 추가.

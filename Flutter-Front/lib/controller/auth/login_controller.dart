@@ -55,6 +55,12 @@ class LoginController extends ChangeNotifier {
         final refreshToken = data['refreshToken'] as String;
         final profileImg = data['profileImg'] ?? '';
 
+        // ✅ [추가] 콘솔에 액세스 토큰 출력
+        print('======================================================');
+        print('>>> [로그인 성공] 액세스 토큰 발급 완료');
+        print('Access Token: $accessToken');
+        print('======================================================');
+
         await secureStorage.write(key: 'accessToken', value: accessToken);
         await secureStorage.write(key: 'refreshToken', value: refreshToken);
         await secureStorage.write(key: 'profileImg', value: profileImg);

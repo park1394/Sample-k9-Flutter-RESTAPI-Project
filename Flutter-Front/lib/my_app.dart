@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       // 스플래시 → 메인 탭 화면
-      home: const MySplash2(),
+      home: const MySplash(),
       routes: {
         // ── 메인 탭 (로그인 전/후 공통 진입점)
         '/main': (_) => const MainTabScreen(),
