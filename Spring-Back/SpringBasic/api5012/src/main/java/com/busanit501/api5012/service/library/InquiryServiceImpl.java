@@ -244,8 +244,8 @@ public class InquiryServiceImpl implements InquiryService {
      * deleteInquiry - 문의사항 삭제
      *
      * findWithRepliesById 로 답변 컬렉션을 함께 로딩한 뒤 삭제합니다.
-     * LAZY 컬렉션을 먼저 초기화해야 cascade = ALL + orphanRemoval = true 가
-     * 확실하게 동작하여 Reply 의 NOT NULL FK(inquiry_id) 제약 위반이
+     * LAZY 컬렉션을 먼저 초기화해야 cascade = ALL 이 자식 엔티티까지
+     * 확실히 전파되어 Reply 의 NOT NULL FK(inquiry_id) 제약 위반이
      * 발생하지 않습니다.
      */
     @Override
@@ -253,14 +253,10 @@ public class InquiryServiceImpl implements InquiryService {
     public void deleteInquiry(Long id) {
         log.info("문의사항 삭제 - inquiryId: {}", id);
 
-        // JOIN FETCH 로 replies 까지 로딩 (orphanRemoval 안전 동작 보장)
         Inquiry inquiry = inquiryRepository.findWithRepliesById(id)
                 .orElseThrow(() -> new RuntimeException("문의사항을 찾을 수 없습니다. id: " + id));
 
-        // 명시적으로 답변 컬렉션을 비워 orphanRemoval 로 먼저 DELETE 되도록 유도
-        inquiry.getReplies().clear();
-
-        // cascade=ALL 로 Inquiry 가 삭제됩니다.
+        // cascade=ALL 로 연관된 답변도 함께 삭제됩니다.
         inquiryRepository.delete(inquiry);
         log.info("문의사항 삭제 완료 - inquiryId: {}", id);
     }
